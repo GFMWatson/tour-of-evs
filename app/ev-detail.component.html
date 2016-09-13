@@ -1,0 +1,14 @@
+ <div *ngIf="ev">
+    <h2>{{ev.model}} details!</h2>
+    <div><label>id: </label>{{ev.id}}</div>
+    <div>
+        <label>make: </label>
+        <input [(ngModel)]="ev.make" placeholder="model"/>
+    </div>
+     <div>
+        <label>model: </label>
+        <input [(ngModel)]="ev.model" placeholder="model"/>
+    </div>
+    </div>
+    <button (click)="goBack()">Back</button>
+     <button (click)="save()">SAVE</button>

@@ -1,0 +1,9 @@
+<h3>Top Electric Vehicles</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let ev of evs" (click)="gotoDetail(ev)" class="col-1-4">
+    <div class="module ev">
+      <h4>{{ev.model}}</h4>
+    </div>
+  </div>
+</div>
+<ev-search></ev-search>

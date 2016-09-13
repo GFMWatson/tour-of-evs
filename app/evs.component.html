@@ -1,0 +1,24 @@
+  <h2>My Electric Vehicles</h2>
+  <div>
+  <label>EV make:</label> <input #evMake />
+  <label>EV model:</label> <input #evModel />
+  <button (click)="add(evMake.value, evModel.value); evMake.value=''; evModel.value='';">
+    Add
+  </button>
+</div>
+        <ul class="evs">
+            <li *ngFor="let ev of evs"
+             [class.selected]="ev === selectedEV"
+             (click)="onSelect(ev) ">
+                <span class="badge">{{ev.id}}</span> <span>{{ev.make}} {{ev.model}}</span>
+                <button class="delete"
+                (click)="delete(ev); $event.stopPropagation()">x</button>
+            </li>
+        </ul>
+    <div>
+    <div *ngIf="selectedEV">
+  <h2>
+    {{selectedEV.model | uppercase}} is my EV
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
